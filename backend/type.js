@@ -1,11 +1,13 @@
 import zod from 'zod';
 
-export const createTodo = zod.object({
+const createTodo = zod.object({
     title: zod.string(),
     description: zod.string(),
     completed: zod.boolean()
 });
 
-export const updateTodo = zod.object({
+const updateTodo = zod.object({
     id: zod.string()
 })
+
+export { createTodo, updateTodo };
