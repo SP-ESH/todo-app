@@ -33,6 +33,7 @@ app.post('/todo', async (req, res) => {
 
 
 app.put('/completed', async (req, res) => {
+    console.log('Request Body:', req.body); // Debugging line
     const response = updateTodo.safeParse(req.body);
     if (!response.success) {
         res.status(411).json({
@@ -42,11 +43,12 @@ app.put('/completed', async (req, res) => {
     }
 
     // continue with updating a todo
-    const { id } = req.body;
-    await Todo.update({ _id: id }, { completed: true });
+    const { id, completed } = req.body;
+    console.log('reached here   with id:', id); // Debugging line
+    await Todo.updateOne({ _id: id }, { completed }, { new: true })
 
     res.json({
-        msg: "Todo marked as completed"
+        msg: "Todo Status Changed Successfully"
     })
 })
 
