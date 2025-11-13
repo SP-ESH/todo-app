@@ -6,14 +6,20 @@ import CreateTodo from './component/CreateTodo'
 import Todos from './component/Todos'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
+
+  fetch('http://localhost:3000/todos')
+    .then(async (res) => {
+      const todos = await res.json();
+      setTodos(todos);
+    })
 
   return (
     <>
       <CreateTodo />
-      <Todos />
+      <Todos todos={todos} />
     </>
   )
 }
 
-export default App
+export default App;

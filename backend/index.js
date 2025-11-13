@@ -2,10 +2,12 @@ import express from 'express';
 // import { createTodo, updateTodo } from './type';
 import { createTodo, updateTodo } from './type.js';
 import Todo from './db.js';
+import cors from 'cors';
+
 const app = express();
 
-
 app.use(express.json());
+app.use(cors());
 
 app.get('/todos', async (req, res) => {
     const todos = await Todo.find();

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://127.0.0.1:27017/todo-app');
+mongoose.connect('mongodb://127.0.0.1:27017/todoApp')
 
 const todoSchema = new mongoose.Schema({
     title: String,
