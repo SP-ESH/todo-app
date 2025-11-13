@@ -1,10 +1,19 @@
 const CreateTodo = () => {
     return (
         <div>
-            <input type="text" placeholder="title" /> <br />
-            <input type="text" placeholder="description" /> <br />
+            <input style={{
+                padding: "10px",
+                margin: "10px",
+            }} type="text" placeholder="title" /> <br />
+            <input style={{
+                padding: "10px",
+                margin: "10px",
+            }} type="text" placeholder="description" /> <br />
 
-            <button>Add to Todo</button>
+            <button style={{
+                padding: "10px",
+                margin: "10px",
+            }}>Add to Todo</button>
         </div>
     )
 }
