@@ -30,7 +30,7 @@ const CreateTodo = () => {
                             title: title,
                             description: description,
                         }),
-                        Headers: {
+                        headers: {
                             'Content-Type': 'application/json'
                         }
                     })
