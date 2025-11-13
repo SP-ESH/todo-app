@@ -10,7 +10,7 @@ const CreateTodo = () => {
                 padding: "10px",
                 margin: "10px",
             }}
-                onChange={(e) => { setTitle(e.target.value); console.log(e.target.value) }}
+                onChange={(e) => setTitle(e.target.value)}
                 type="text" placeholder="title" /> <br />
             <input style={{
                 padding: "10px",
@@ -29,6 +29,7 @@ const CreateTodo = () => {
                         body: JSON.stringify({
                             title: title,
                             description: description,
+                            completed: false,
                         }),
                         headers: {
                             'Content-Type': 'application/json'
@@ -36,6 +37,7 @@ const CreateTodo = () => {
                     })
                         .then(async (res) => {
                             const response = await res.json();
+                            console.log(response);
                             alert("Todo created");
                         })
                 }}
