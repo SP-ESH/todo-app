@@ -6,8 +6,11 @@ const createTodo = zod.object({
     completed: zod.boolean()
 });
 
+// Validation for updating a todo
 const updateTodo = zod.object({
-    id: zod.string()
-})
+    title: zod.string().optional(),
+    description: zod.string().optional(),
+    completed: zod.boolean().optional()
+});
 
 export { createTodo, updateTodo };
